@@ -9,6 +9,9 @@ from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 import pypdf
 
+import os
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"]="python"
+
 
 def generate_response_pdf(uploaded_file, openai_api_key, query_text):
     # Load document if file is uploaded
