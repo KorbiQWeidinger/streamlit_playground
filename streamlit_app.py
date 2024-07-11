@@ -9,6 +9,8 @@ from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 import pypdf
 
+MODEL = "gpt-3.5-turbo-16k"
+# MODEL = "gpt-4o"
 
 def generate_response_pdf(uploaded_file, openai_api_key, query_text):
     # Load document if file is uploaded
@@ -31,9 +33,7 @@ def generate_response_pdf(uploaded_file, openai_api_key, query_text):
     # Create retriever interface
     retriever = db.as_retriever()
     # Create QA chain
-    # old model gpt-3.5-turbo-16k
-    # new model gpt-4o
-    qa = RetrievalQA.from_chain_type(llm=ChatOpenAI(openai_api_key=openai_api_key, model="gpt-3.5-turbo-16k"), chain_type='stuff', retriever=retriever)
+    qa = RetrievalQA.from_chain_type(llm=ChatOpenAI(openai_api_key=openai_api_key, model=MODEL), chain_type='stuff', retriever=retriever)
     return qa.run(query_text)
 
 # Page title
@@ -51,7 +51,7 @@ with st.form('myform', clear_on_submit=True):
     if submitted and openai_api_key.startswith('sk-'):
         with st.spinner('Calculating...'):
             response = generate_response_pdf(uploaded_file, openai_api_key, query_text)
-            result.append(response)
+            result.append(f"{response}\n[generated with {MODEL}]")
             del openai_api_key
 if len(result):
     st.info(response)
