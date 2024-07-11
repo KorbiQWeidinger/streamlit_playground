@@ -51,7 +51,7 @@ with st.form('myform', clear_on_submit=True):
     if submitted and openai_api_key.startswith('sk-'):
         with st.spinner('Calculating...'):
             response = generate_response_pdf(uploaded_file, openai_api_key, query_text)
-            result.append(f"{response}\n[generated with {MODEL}]")
+            result.append(response)
             del openai_api_key
 if len(result):
-    st.info(response)
+    st.info(f"{response}\n[generated with {MODEL}]")
