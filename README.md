@@ -16,7 +16,8 @@ Fork this repository to create a copy of this repository in your personal GitHub
 ## StreamLit
 Sign in [StreamLit](https://share.streamlit.io/) with your Github account
 
-Now click "Create App" and select the GitHub Repository.
+Now click "Create App" > "I have an app" and select the GitHub Repository.
+Click Deploy.
 Now check out the working application.
 
 ## Update the App
