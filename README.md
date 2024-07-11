@@ -22,9 +22,12 @@ You can now make changes to your app by updating your repository.
 #### Example
 Change the OpenAI model to `gpt-4o` their latest model.
 
-Go into the file 
+Go into the file `streamlit_app.py` and change the model to `gpt-4o` by clicking on edit.
+Commit your changes.
 
+Go to StreamLit and click `reboot`.
 
+Now your app is using the new `gpt-4o` model instead of the old `gpt-3.5` model.
 
 
 ## Code
