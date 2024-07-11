@@ -10,6 +10,9 @@
 - Type a username, your email address, and a password.
 - Choose Sign up for GitHub, and then follow the instructions.
 
+## Fork this Repository
+Fork this repository to create a copy of this repository in your personal GitHub so you can edit files.
+
 ## StreamLit
 Sign in [StreamLit](https://share.streamlit.io/) with your Github account
 
