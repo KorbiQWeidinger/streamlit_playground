@@ -31,7 +31,9 @@ def generate_response_pdf(uploaded_file, openai_api_key, query_text):
     # Create retriever interface
     retriever = db.as_retriever()
     # Create QA chain
-    qa = RetrievalQA.from_chain_type(llm=ChatOpenAI(openai_api_key=openai_api_key, model="gpt-3.5-turbo-16k"), chain_type='stuff', retriever=retriever)
+    # old model gpt-3.5-turbo-16k
+    # new model gpt-4o
+    qa = RetrievalQA.from_chain_type(llm=ChatOpenAI(openai_api_key=openai_api_key, model="gpt-4o"), chain_type='stuff', retriever=retriever)
     return qa.run(query_text)
 
 # Page title
