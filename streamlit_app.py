@@ -9,8 +9,8 @@ from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 import pypdf
 
-MODEL = "gpt-3.5-turbo-16k"
-# MODEL = "gpt-4o"
+# MODEL = "gpt-3.5-turbo-16k"
+MODEL = "gpt-4o"
 
 def generate_response_pdf(uploaded_file, openai_api_key, query_text):
     # Load document if file is uploaded
